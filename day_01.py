@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 
-
-def main():
-    """Solves the day 1 puzzle."""
+def main() -> None:
     puzzle_input = load_puzzle()
     elves = load_elves_from_input(puzzle_input)
     elves.sort(reverse=True)
@@ -10,17 +8,12 @@ def main():
     print(f'Part 2: {elves[0] + elves[1] + elves[2]}')
 
 
-def load_puzzle():
-    """Loads the puzzle from the input file and returns it as a list of lines."""
+def load_puzzle() -> list[str]:
     with open('day_01_input.txt') as f:
         return [line.rstrip() for line in f.readlines()]
 
 
-def load_elves_from_input(puzzle_input):
-    """
-    Loads the list of elves from the puzzle input, where each elf
-    is represented as the total number of calories it is carrying.
-    """
+def load_elves_from_input(puzzle_input) -> list[int]:
     elves = []
     elf = 0
 
